@@ -1,18 +1,26 @@
-import React from "react";
-import { Button } from "./components/ui/button";
+import React, { useEffect } from "react";
 import NavBar from "./layouts/NavBar";
 import Body from "./layouts/body/Body";
-import { Provider } from "react-redux";
-import appStore from "./store/appStore";
+import {  useDispatch } from "react-redux";
+import { getVideoData } from "./store/Slices/videoSlice";
 
 const App = () => {
+  const dispatch = useDispatch();
+
+
+
+
+  
+  useEffect(() => {
+    dispatch(getVideoData());
+  }, []);
   return (
-    <Provider store={appStore}>
+    
       <div>
         <NavBar />
         <Body />
       </div>
-    </Provider>
+   
   );
 };
 
