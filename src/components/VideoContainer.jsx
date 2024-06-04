@@ -1,6 +1,7 @@
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import VideoCard from "./VideoCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const VideoContainer = () => {
   const isLoading = useSelector((store) => store.video.isLoading);
@@ -11,9 +12,11 @@ const VideoContainer = () => {
   return isLoading ? (
     <Shimmer />
   ) : (
-    <div className=" grid grid-cols-1 pt-8 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div className=" grid grid-cols-1 gap-6 pt-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {videoData.map((video) => (
-        <VideoCard key={video.id} info={video} />
+        <Link to={"/watch?v="+ video.id} key={video.id}>
+          <VideoCard info={video} />
+        </Link>
       ))}
     </div>
   );

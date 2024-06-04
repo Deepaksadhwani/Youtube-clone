@@ -6,7 +6,7 @@ const VideoCard = ({ info }) => {
   const { viewCount } = statistics;
 
   return (
-    <div className="flex flex-col overflow-hidden rounded-lg bg-white shadow-md transition duration-300 hover:scale-105 hover:bg-gray-100 hover:shadow-lg">
+    <div className="flex flex-col overflow-hidden h-[350px] rounded-lg bg-white shadow-md transition duration-300 hover:scale-105 hover:bg-gray-100 hover:shadow-lg">
       <div>
         <img
           src={thumbnails.medium.url}
