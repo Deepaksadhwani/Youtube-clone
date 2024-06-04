@@ -1,10 +1,15 @@
 import ButtonList from "@/components/ButtonList";
 import VideoContainer from "@/components/VideoContainer";
-import React from "react";
+import useGetVideos from "@/hooks/useGetVideos";
+import React, { useEffect } from "react";
 
 const MainContainer = () => {
+  useEffect(() => {
+    useGetVideos();
+  }, []);
+
   return (
-    <div>
+    <div className="">
       <ButtonList />
       <VideoContainer />
     </div>

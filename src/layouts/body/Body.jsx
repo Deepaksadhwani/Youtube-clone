@@ -4,7 +4,7 @@ import MainContainer from "./MainContainer";
 
 const Body = () => {
   return (
-    <div>
+    <div className="flex w-full">
       <SideBar />
       <MainContainer />
     </div>
