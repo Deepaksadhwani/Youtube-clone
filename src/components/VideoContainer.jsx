@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import VideoCard from "./VideoCard";
+import VideoCard, { AdVideoCard} from "./VideoCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 
@@ -13,8 +13,9 @@ const VideoContainer = () => {
     <Shimmer />
   ) : (
     <div className=" grid grid-cols-1 gap-6 pt-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <AdVideoCard info={videoData[0]} />
       {videoData.map((video) => (
-        <Link to={"/watch?v="+ video.id} key={video.id}>
+        <Link to={"/watch?v=" + video.id} key={video.id}>
           <VideoCard info={video} />
         </Link>
       ))}
